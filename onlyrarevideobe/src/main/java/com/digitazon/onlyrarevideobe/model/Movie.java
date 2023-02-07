@@ -32,7 +32,9 @@ public class Movie {
     @Column
     private String plot;
 
-    @Column
+    @Column(length = 20000)
+    // I'm saying to Spring That I want a column which allows many letters
+    // Spring will create a column "image" type--->TEXT, not VARCHAR
     private String image;
 
     // Foreign Key

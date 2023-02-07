@@ -42,6 +42,16 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "https://m.media-amazon.com/images/M/MV5BNDUwMDUyMDAyNF5BMl5BanBnXkFtZTYwMDQ3NzM3._V1_FMjpg_UX1000_.jpg",
                                 director1);
 
+                Movie movie10 = new Movie("Unbreakable", "2000", "106",
+                                null,
+                                "https://i.ytimg.com/vi/ZMwfdmLWgSM/movieposter_en.jpg",
+                                director1);
+
+                Movie movie11 = new Movie("The Happening", "2008", "85",
+                                null,
+                                "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Happening_poster.jpg/220px-Happening_poster.jpg",
+                                director1);
+
                 // De palma Movie
 
                 Movie movie4 = new Movie("Carrie", "1976", "98",
@@ -50,7 +60,7 @@ public class DataLoadRunner implements CommandLineRunner {
 
                 Movie movie5 = new Movie("Scarface", "1983", "170",
                                 null,
-                                "https: // m.media-amazon.com/images/I/71hzm7Yh01L._SL1500_.jpg", director2);
+                                "https://pad.mymovies.it/filmclub/2006/02/135/locandina.jpg", director2);
 
                 Movie movie6 = new Movie("Phamtom of the Paradise", "1974", "92",
                                 null,
@@ -79,6 +89,8 @@ public class DataLoadRunner implements CommandLineRunner {
                 movieService.createMovie(movie7);
                 movieService.createMovie(movie8);
                 movieService.createMovie(movie9);
+                movieService.createMovie(movie10);
+                movieService.createMovie(movie11);
 
         }
 
