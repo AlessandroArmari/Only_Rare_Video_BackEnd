@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.digitazon.onlyrarevideobe.model.Movie;
 import com.digitazon.onlyrarevideobe.repository.MovieRepository;
 
-
 @Service
 public class MovieService {
 
@@ -78,6 +77,12 @@ public class MovieService {
 
         return null;
 
+    }
+
+    /* 1 */
+
+    public Movie getMovieByTitle(String title) {
+        return movieRepository.findByTitle(title);
     }
 
 }

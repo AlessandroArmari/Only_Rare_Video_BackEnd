@@ -29,7 +29,7 @@ public class Movie {
     @Column
     private String running_time;
 
-    @Column
+    @Column(length = 20000)
     private String plot;
 
     @Column(length = 20000)

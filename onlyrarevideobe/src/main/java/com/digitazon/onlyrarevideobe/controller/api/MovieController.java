@@ -65,4 +65,10 @@ public class MovieController {
         return new ResponseEntity<>(movieService.updateMovieById(id, newMovie), HttpStatus.OK);
     }
 
+    /* 1 */
+    @RequestMapping("/title")
+    @GetMapping
+    public ResponseEntity<Movie> getMovieByTitle(@RequestParam String title){
+        return new ResponseEntity<>(movieService.getMovieByTitle(title) , HttpStatus.OK);
+    }
 }
