@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -24,6 +25,9 @@ public class Director {
     private String fullName;
 
     @Column
+    private String sanitize_fullName;
+
+    @Column
     private String birthYear;
 
     @Column
@@ -31,15 +35,18 @@ public class Director {
 
     // "Pseudo"-Foreign_Key
 
-    @OneToMany //(mappedBy = "id")
+    @OneToMany // (mappedBy = "id")
     private List<Movie> movies;
 
-    public Director(String fullName, String birthYear, String nationality, List<Movie> movies) {
+    public Director(String fullName, String sanitize_fullName, String birthYear, String nationality,
+            List<Movie> movies) {
         this.fullName = fullName;
+        this.sanitize_fullName = sanitize_fullName;
         this.birthYear = birthYear;
         this.nationality = nationality;
         this.movies = movies;
     }
 
     
+
 }

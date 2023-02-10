@@ -24,7 +24,13 @@ public class Movie {
     private String title;
 
     @Column
+    private String sanitizeTitle;
+
+    @Column
     private String year;
+
+    @Column
+    private String genre;
 
     @Column
     private String running_time;
@@ -43,13 +49,17 @@ public class Movie {
     // the foreign key in the table director
     private Director director;
 
-    public Movie(String title, String year, String running_time, String plot, String image, Director director) {
+    public Movie(String title, String sanitizeTitle, String year, String genre, String running_time, String plot,
+            String image, Director director) {
         this.title = title;
+        this.sanitizeTitle = sanitizeTitle;
         this.year = year;
+        this.genre = genre;
         this.running_time = running_time;
         this.plot = plot;
         this.image = image;
         this.director = director;
     }
 
+    
 }

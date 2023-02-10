@@ -1,7 +1,5 @@
 package com.digitazon.onlyrarevideobe.controller.api;
 
-
-
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -66,9 +64,19 @@ public class MovieController {
     }
 
     /* 1 */
+    @RequestMapping("/titleNOTSANITIZED")
+    @GetMapping
+    public ResponseEntity<Movie> getMovieByTitle(@RequestParam String title) {
+        return new ResponseEntity<>(movieService.getMovieByTitle(title), HttpStatus.OK);
+    }
+
+    /* 2 */
     @RequestMapping("/title")
     @GetMapping
-    public ResponseEntity<Movie> getMovieByTitle(@RequestParam String title){
-        return new ResponseEntity<>(movieService.getMovieByTitle(title) , HttpStatus.OK);
+    public ResponseEntity<List<Movie>> getMovieBySanitizeTitle(@RequestParam String sanitizeTitle) {
+        return new ResponseEntity<>(movieService.getMovieBySanitizeTitle(
+                sanitizeTitle),
+                HttpStatus.OK);
     }
+
 }

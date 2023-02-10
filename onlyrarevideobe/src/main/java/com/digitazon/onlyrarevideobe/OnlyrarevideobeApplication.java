@@ -8,7 +8,7 @@ public class OnlyrarevideobeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OnlyrarevideobeApplication.class, args);
-		System.out.println("Application Started");
+		System.out.println("+++Application Started+++");
 	}
 
 }

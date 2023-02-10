@@ -85,4 +85,10 @@ public class MovieService {
         return movieRepository.findByTitle(title);
     }
 
+    /* 2 */
+
+    public List<Movie> getMovieBySanitizeTitle(String sanitizeTitle) {
+        return movieRepository.findBySanitizeTitle(sanitizeTitle);
+    }
+
 }
