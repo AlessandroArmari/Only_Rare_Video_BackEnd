@@ -24,10 +24,12 @@ public class DataLoadRunner implements CommandLineRunner {
                 Director director1 = new Director("M. Night Shyamalan", "mnightshyamalan", "1970", "US", null);
                 Director director2 = new Director("Brian De Palma", "briandepalma", "1940", "US", null);
                 Director director3 = new Director("Nanni Moretti", "nannimoretti", "1953", "Italian", null);
+                Director director4 = new Director("Zhang Yimou", "zhangyimou", "1950", "Chinese", null);
 
                 directorService.createDirector(director1);
                 directorService.createDirector(director2);
                 directorService.createDirector(director3);
+                directorService.createDirector(director4);
 
                 // M. Night Movies
                 Movie movie1 = new Movie("The Village", "thevillage", "2004", "Horror", "108",
@@ -98,6 +100,20 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "https://m.media-amazon.com/images/M/MV5BNzE5MTRkODQtNmE1Yy00NTI3LWE2ZTMtOGJjOTUyNjY0ZWVmXkEyXkFqcGdeQXVyMzIzNDU1NTY@._V1_.jpg",
                                 director3);
 
+                // Zhang Yimou movies
+
+                Movie movie14 = new Movie("Raise the Red Lantern", "raisetheredlantern",
+                                "1991", "Drama", "125",
+                                "Teenage Songlian (Gong Li), whose family has been devastated by the recent death of her father, becomes the third concubine of wealthy Master Chen (Ma Jingwu). She soon discovers that behind the palatial luxury of life in the master's house, she and her fellow concubines, Zhuoyan (Cao Cuifeng) and Meishan (He Caifei), are pitted against each other in a struggle for his affections. The situation inevitably leads to deception, jealous rages and the revelation of each other's darkest secrets.",
+                                "https://m.media-amazon.com/images/M/MV5BNDMxMTc2N2ItMjI5Ny00MGFiLThkOTYtZTIyYTZhMzA2NjIzXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_.jpg",
+                                director4);
+
+                Movie movie15 = new Movie("Hero", "hero",
+                                "2002", "Action", "107",
+                                "In this visually arresting martial arts epic set in ancient China, an unnamed fighter (Jet Li) is being honored for defeating three of the king's most dangerous enemies. When Nameless recounts his battles with the assassins -- Broken Sword (Tony Leung Chiu Wai), Flying Snow (Maggie Cheung Man-yuk) and Moon (Zhang Ziyi) -- the king begins to question some of the details. As Nameless goes on, the king challenges the tales, interjecting his own take on these perhaps suspect version of events.",
+                                "https://m.media-amazon.com/images/M/MV5BMWQ2MjQ0OTctMWE1OC00NjZjLTk3ZDAtNTk3NTZiYWMxYTlmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+                                director4);
+
                 movieService.createMovie(movie1);
                 movieService.createMovie(movie2);
                 movieService.createMovie(movie3);
@@ -111,6 +127,8 @@ public class DataLoadRunner implements CommandLineRunner {
                 movieService.createMovie(movie11);
                 movieService.createMovie(movie12);
                 movieService.createMovie(movie13);
+                movieService.createMovie(movie14);
+                movieService.createMovie(movie15);
 
         }
 
