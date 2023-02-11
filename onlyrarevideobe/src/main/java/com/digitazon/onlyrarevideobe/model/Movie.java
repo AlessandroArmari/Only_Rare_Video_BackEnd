@@ -1,11 +1,14 @@
 package com.digitazon.onlyrarevideobe.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -49,6 +52,9 @@ public class Movie {
     // the foreign key in the table director
     private Director director;
 
+    @ManyToMany
+    private List<Collection> collections;
+
     public Movie(String title, String sanitizeTitle, String year, String genre, String running_time, String plot,
             String image, Director director) {
         this.title = title;
@@ -61,5 +67,4 @@ public class Movie {
         this.director = director;
     }
 
-    
 }

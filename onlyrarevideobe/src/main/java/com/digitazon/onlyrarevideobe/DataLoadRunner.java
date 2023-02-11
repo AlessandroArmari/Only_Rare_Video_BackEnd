@@ -1,13 +1,18 @@
 package com.digitazon.onlyrarevideobe;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.digitazon.onlyrarevideobe.model.Collection;
 import com.digitazon.onlyrarevideobe.model.Director;
 import com.digitazon.onlyrarevideobe.model.Movie;
 import com.digitazon.onlyrarevideobe.service.DirectorService;
 import com.digitazon.onlyrarevideobe.service.MovieService;
+import com.digitazon.onlyrarevideobe.service.CollectionService;
 
 @Component
 public class DataLoadRunner implements CommandLineRunner {
@@ -17,6 +22,9 @@ public class DataLoadRunner implements CommandLineRunner {
 
         @Autowired
         MovieService movieService;
+
+        @Autowired
+        CollectionService collectionService;
 
         @Override
         public void run(String... args) throws Exception {
@@ -130,6 +138,23 @@ public class DataLoadRunner implements CommandLineRunner {
                 movieService.createMovie(movie14);
                 movieService.createMovie(movie15);
 
-        }
+                // +++MANAGIN TABLE COLLECTION+++
+                // CREATING moviesHalloween TO BE PUT IN A halloweenCollection (which is an SQL
+                // @Entity)
+
+                List<Movie> moviesHalloween = new ArrayList<>();
+                moviesHalloween.add(movie7);
+                moviesHalloween.add(movie8);
+                moviesHalloween.add(movie4);
+                moviesHalloween.add(movie2);
+                moviesHalloween.add(movie1);
+
+                Collection halloweenCollection = new Collection("Halloween Collection",
+                                "Pick up 3, pay 2. From 27th Oct. to 1st Nov.",
+                                moviesHalloween);
+
+                collectionService.createCollection(halloweenCollection);
+
+        };
 
 }
