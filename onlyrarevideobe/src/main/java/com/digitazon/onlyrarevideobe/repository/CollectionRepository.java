@@ -6,6 +6,7 @@ import com.digitazon.onlyrarevideobe.model.Collection;
 
 public interface CollectionRepository extends JpaRepository<Collection, Long> {
 
-    // HERE go Custom methods!
+    /* 1 */
 
+    public Collection findBySanitizeCollectionName(String sanitizeCollectionName);
 }

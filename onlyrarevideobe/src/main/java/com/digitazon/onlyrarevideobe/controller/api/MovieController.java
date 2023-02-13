@@ -28,51 +28,44 @@ public class MovieController {
     MovieService movieService;
 
     // GET ALL
-    @RequestMapping("/all")
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<>(movieService.getAllMovies(), HttpStatus.OK);
     }
 
     // GET BY ID
-    @RequestMapping("/id")
-    @GetMapping
+    @GetMapping("/id")
     public ResponseEntity<Movie> getMovieById(@RequestParam Long id) {
         return new ResponseEntity<>(movieService.getMovieById(id), HttpStatus.OK);
     }
 
     // POST A MOVIE
-    @RequestMapping("/create")
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Movie> createMovie(@RequestBody Movie newMovie) {
         return new ResponseEntity<>(movieService.createMovie(newMovie), HttpStatus.CREATED);
     }
 
     // DELETE BY ID
-    @RequestMapping("/delete")
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity<String> deleteMovieById(@RequestParam Long id) {
         movieService.deleteMovieById(id);
         return new ResponseEntity<String>("Movie deleted", HttpStatus.OK);
     }
 
     // UPDATE
-    @RequestMapping("/update")
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<Movie> updateMovieById(@RequestParam Long id, @RequestBody Movie newMovie) {
         return new ResponseEntity<>(movieService.updateMovieById(id, newMovie), HttpStatus.OK);
     }
 
     /* 1 */
-    @RequestMapping("/titleNOTSANITIZED")
-    @GetMapping
+    @GetMapping("/titleNOTSANITIZED")
     public ResponseEntity<Movie> getMovieByTitle(@RequestParam String title) {
         return new ResponseEntity<>(movieService.getMovieByTitle(title), HttpStatus.OK);
     }
 
     /* 2 */
-    @RequestMapping("/title")
-    @GetMapping
+    @GetMapping("/title")
     public ResponseEntity<List<Movie>> getMovieBySanitizeTitle(@RequestParam String sanitizeTitle) {
         return new ResponseEntity<>(movieService.getMovieBySanitizeTitle(
                 sanitizeTitle),

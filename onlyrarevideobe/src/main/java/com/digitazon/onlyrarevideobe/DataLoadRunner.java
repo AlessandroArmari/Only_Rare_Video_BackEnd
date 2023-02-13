@@ -139,8 +139,10 @@ public class DataLoadRunner implements CommandLineRunner {
                 movieService.createMovie(movie15);
 
                 // +++MANAGIN TABLE COLLECTION+++
-                // CREATING moviesHalloween TO BE PUT IN A halloweenCollection (which is an SQL
-                // @Entity)
+                // CREATING moviesHalloween (ArrayList) TO BE PUT IN A halloweenCollection
+                // (which is an SQL @Entity)
+
+                /* 1 Halloween Deal */
 
                 List<Movie> moviesHalloween = new ArrayList<>();
                 moviesHalloween.add(movie7);
@@ -149,11 +151,40 @@ public class DataLoadRunner implements CommandLineRunner {
                 moviesHalloween.add(movie2);
                 moviesHalloween.add(movie1);
 
-                Collection halloweenCollection = new Collection("Halloween Collection",
-                                "Pick up 3, pay 2. From 27th Oct. to 1st Nov.",
+                Collection halloweenCollection = new Collection("Halloween Collection", "halloweencollection",
+                                "Have your Halloween deal. Get 3 movies, pay 2 of them. Valid until 1st November!",
+                                "https://static.sky.it/editorialimages/2917b7168949c53c76d433c83d1993ff978404bd/skytg24/it/spettacolo/cinema/2023/01/20/scream-6-trailer/Webphoto_Scream_065605_08.jpg",
                                 moviesHalloween);
 
                 collectionService.createCollection(halloweenCollection);
+
+                /* 2 Rising Sun Deal */
+
+                List<Movie> moviesRisingSun = new ArrayList<>();
+
+                moviesRisingSun.add(movie15);
+                moviesRisingSun.add(movie14);
+
+                Collection risingSunCollection = new Collection("Rising Sun Collection", "risingsuncollection",
+                                "33% off all of the oriental movies. The sun shines bright!",
+                                "https://images.everyeye.it/img-notizie/audition-cambio-data-ritorno-film-takashi-miike-rinviato-italia-v5-629944.jpg",
+                                moviesRisingSun);
+
+                collectionService.createCollection(risingSunCollection);
+
+                /* 3 Italian Deal */
+
+                List<Movie> moviesItalianDeal = new ArrayList<>();
+
+                moviesItalianDeal.add(movie13);
+                moviesItalianDeal.add(movie12);
+
+                Collection italianDeal = new Collection("Italian Deal", "italiandeal",
+                                "Eat, shoot and cry. Choose among our collection of discounted italian delicatessen!",
+                                "https://www.madeinviadana.it/BLOG/wp-content/uploads/2021/04/cover-violenta.jpg",
+                                moviesItalianDeal);
+
+                collectionService.createCollection(italianDeal);
 
         };
 

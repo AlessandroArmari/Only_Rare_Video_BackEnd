@@ -25,15 +25,26 @@ public class Collection {
     private String collectionName;
 
     @Column
+    private String sanitizeCollectionName;
+
+    @Column
     private String collectionDescription;
+
+    @Column(length = 20000)
+    private String collectionImage;
 
     @ManyToMany
     private List<Movie> movies;
 
-    public Collection(String collectionName, String collectionDescription, List<Movie> movies) {
+    public Collection(String collectionName, String sanitizeCollectionName, String collectionDescription,
+            String collectionImage, List<Movie> movies) {
         this.collectionName = collectionName;
+        this.sanitizeCollectionName = sanitizeCollectionName;
         this.collectionDescription = collectionDescription;
+        this.collectionImage = collectionImage;
         this.movies = movies;
     }
+
+    
 
 }

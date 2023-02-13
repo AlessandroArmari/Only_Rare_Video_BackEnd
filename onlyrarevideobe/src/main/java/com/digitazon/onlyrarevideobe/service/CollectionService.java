@@ -21,4 +21,10 @@ public class CollectionService {
     public List<Collection> getAllCollections() {
         return collectionRepository.findAll();
     }
+
+    /* 1 */
+
+    public Collection getCollectionBySanitizeCollectionName(String sanitizeCollectionName){
+        return collectionRepository.findBySanitizeCollectionName(sanitizeCollectionName);
+    }
 }

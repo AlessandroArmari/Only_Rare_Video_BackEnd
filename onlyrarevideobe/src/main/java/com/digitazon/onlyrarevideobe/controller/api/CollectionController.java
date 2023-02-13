@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.digitazon.onlyrarevideobe.model.Collection;
 import com.digitazon.onlyrarevideobe.service.CollectionService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/collection")
@@ -21,10 +22,18 @@ public class CollectionController {
     @Autowired
     CollectionService collectionService;
 
-    @RequestMapping("/all")
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Collection>> getAllCollections() {
         return new ResponseEntity<>(collectionService.getAllCollections(), HttpStatus.OK);
+    }
+
+    /* 1 */
+
+    @GetMapping(value = "/collectionname")
+    public ResponseEntity<Collection> getCollectionBySanitizeCollectionName(
+            @RequestParam String sanitizeCollectionName) {
+        return new ResponseEntity<>(collectionService.getCollectionBySanitizeCollectionName(sanitizeCollectionName),
+                HttpStatus.OK);
     }
 
 }

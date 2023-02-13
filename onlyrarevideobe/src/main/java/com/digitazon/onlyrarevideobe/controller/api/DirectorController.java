@@ -28,8 +28,7 @@ public class DirectorController {
     DirectorService directorService;
 
     // GET ALL
-    @RequestMapping("/all")
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Director>> getAllDirectors() {
         return new ResponseEntity<>(directorService.getAllDirectors(), HttpStatus.OK);
     }
@@ -42,23 +41,21 @@ public class DirectorController {
     }
 
     // POST A DIRECTOR
-    @RequestMapping("/create")
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Director> createDirector(@RequestBody Director newDirector) {
         return new ResponseEntity<>(directorService.createDirector(newDirector), HttpStatus.CREATED);
     }
 
     // DELETE BY ID
-    @RequestMapping("/delete")
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity<String> deleteDirectorById(@RequestParam Long id) {
         directorService.deleteDirectorById(id);
         return new ResponseEntity<String>("Director deleted", HttpStatus.OK);
     }
 
     // UPDATE
-    @RequestMapping("/update")
-    @PutMapping
+
+    @PutMapping("/update")
     public ResponseEntity<Director> updateDirectorById(@RequestParam Long id, @RequestBody Director newDirector) {
         return new ResponseEntity<>(directorService.updateDirectorById(id, newDirector), HttpStatus.OK);
     }
