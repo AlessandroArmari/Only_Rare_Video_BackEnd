@@ -33,11 +33,13 @@ public class DataLoadRunner implements CommandLineRunner {
                 Director director2 = new Director("Brian De Palma", "briandepalma", "1940", "US", null);
                 Director director3 = new Director("Nanni Moretti", "nannimoretti", "1953", "Italian", null);
                 Director director4 = new Director("Zhang Yimou", "zhangyimou", "1950", "Chinese", null);
+                Director director5 = new Director("Kiyoshi Kurosawa", "kiyoshikurosawa", "1955", "Japan", null);
 
                 directorService.createDirector(director1);
                 directorService.createDirector(director2);
                 directorService.createDirector(director3);
                 directorService.createDirector(director4);
+                directorService.createDirector(director5);
 
                 // M. Night Movies
                 Movie movie1 = new Movie("The Village", "thevillage", "2004", "Horror", "108",
@@ -122,6 +124,18 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "https://m.media-amazon.com/images/M/MV5BMWQ2MjQ0OTctMWE1OC00NjZjLTk3ZDAtNTk3NTZiYWMxYTlmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
                                 director4);
 
+                // Kiyoshi Kurosawa movies
+
+                Movie movie16 = new Movie("Kairo", "kairo", "2001", "Horror", "114",
+                                "After college student Taguchi (Kenji Mizuhashi) commits suicide, a number of young adults living in Tokyo witness terrifying visions transferred across the Internet. As more people disappear throughout the city, the Internet becomes a breeding ground for malevolent spirits. Three seemingly disconnected stories follow Michi (Kumiko Aso), Ryosuke (Haruhiko Katô) and Harue (Koyuki) as they attempt to solve the mystery behind the ghostly visions that are seeping beyond their computer monitors.",
+                                "https://m.media-amazon.com/images/M/MV5BM2QyYmRlNjAtYTIzMC00Zjk5LWFmNTYtYzIxZDc2OTFiNmZiXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_.jpg",
+                                director5);
+
+                Movie movie17 = new Movie("Cure", "cure", "2001", "thriller", "112",
+                                "Cure is part atmospheric crime film and part philosophical meditation. Detective Takabe (Koji Yakusho) is tracking a series of identical murders, committed under the same bizarre circumstances. Nothing seems to connect the murders and Takabe becomes increasingly frustrated...",
+                                "https://m.media-amazon.com/images/M/MV5BY2IzODExNDgtMzViNC00ZDk5LWJlOGYtM2VjZjQ4MzllN2RiXkEyXkFqcGdeQXVyNTY4ODAxODI@._V1_.jpg",
+                                director5);
+
                 movieService.createMovie(movie1);
                 movieService.createMovie(movie2);
                 movieService.createMovie(movie3);
@@ -137,6 +151,8 @@ public class DataLoadRunner implements CommandLineRunner {
                 movieService.createMovie(movie13);
                 movieService.createMovie(movie14);
                 movieService.createMovie(movie15);
+                movieService.createMovie(movie16);
+                movieService.createMovie(movie17);
 
                 // +++MANAGIN TABLE COLLECTION+++
                 // CREATING moviesHalloween (ArrayList) TO BE PUT IN A halloweenCollection
@@ -150,10 +166,12 @@ public class DataLoadRunner implements CommandLineRunner {
                 moviesHalloween.add(movie4);
                 moviesHalloween.add(movie2);
                 moviesHalloween.add(movie1);
+                moviesHalloween.add(movie16);
+                moviesHalloween.add(movie17);
 
                 Collection halloweenCollection = new Collection("Halloween Collection", "halloweencollection",
                                 "Have your Halloween deal. Get 3 movies, pay 2 of them. Valid until 1st November!",
-                                "https://static.sky.it/editorialimages/2917b7168949c53c76d433c83d1993ff978404bd/skytg24/it/spettacolo/cinema/2023/01/20/scream-6-trailer/Webphoto_Scream_065605_08.jpg",
+                                "https://m.media-amazon.com/images/M/MV5BOTRkMTA3OGUtZDJjNy00MzhjLTkyZDEtY2I4M2ZiZTk0MDJmXkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_.jpg",
                                 moviesHalloween);
 
                 collectionService.createCollection(halloweenCollection);
@@ -164,10 +182,12 @@ public class DataLoadRunner implements CommandLineRunner {
 
                 moviesRisingSun.add(movie15);
                 moviesRisingSun.add(movie14);
+                moviesRisingSun.add(movie16);
+                moviesRisingSun.add(movie17);
 
                 Collection risingSunCollection = new Collection("Rising Sun Collection", "risingsuncollection",
                                 "33% off all of the oriental movies. The sun shines bright!",
-                                "https://images.everyeye.it/img-notizie/audition-cambio-data-ritorno-film-takashi-miike-rinviato-italia-v5-629944.jpg",
+                                "https://m.media-amazon.com/images/M/MV5BYzE4Yjc1ZmQtZDhlYi00YzZhLWFlZGYtOWI5MmZlNjU3ZDA2XkEyXkFqcGdeQXVyMTI3MDk3MzQ@._V1_.jpg",
                                 moviesRisingSun);
 
                 collectionService.createCollection(risingSunCollection);
@@ -181,7 +201,7 @@ public class DataLoadRunner implements CommandLineRunner {
 
                 Collection italianDeal = new Collection("Italian Deal", "italiandeal",
                                 "Eat, shoot and cry. Choose among our collection of discounted italian delicatessen!",
-                                "https://www.madeinviadana.it/BLOG/wp-content/uploads/2021/04/cover-violenta.jpg",
+                                "https://m.media-amazon.com/images/M/MV5BMTc3ZWI4YWYtNzM5ZC00ZGI0LWJlYmItYTRjZTBhNzI1ZTc1XkEyXkFqcGdeQXVyMDQ4Mzg5Mw@@._V1_.jpg",
                                 moviesItalianDeal);
 
                 collectionService.createCollection(italianDeal);

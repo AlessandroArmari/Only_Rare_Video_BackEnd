@@ -29,7 +29,7 @@ public class CollectionController {
 
     /* 1 */
 
-    @GetMapping(value = "/collectionname")
+    @GetMapping("/collectionname")
     public ResponseEntity<Collection> getCollectionBySanitizeCollectionName(
             @RequestParam String sanitizeCollectionName) {
         return new ResponseEntity<>(collectionService.getCollectionBySanitizeCollectionName(sanitizeCollectionName),
