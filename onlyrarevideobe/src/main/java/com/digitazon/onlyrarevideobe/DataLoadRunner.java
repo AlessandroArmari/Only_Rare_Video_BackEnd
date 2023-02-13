@@ -131,7 +131,7 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "https://m.media-amazon.com/images/M/MV5BM2QyYmRlNjAtYTIzMC00Zjk5LWFmNTYtYzIxZDc2OTFiNmZiXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_.jpg",
                                 director5);
 
-                Movie movie17 = new Movie("Cure", "cure", "2001", "thriller", "112",
+                Movie movie17 = new Movie("Cure", "cure", "2001", "Thriller", "112",
                                 "Cure is part atmospheric crime film and part philosophical meditation. Detective Takabe (Koji Yakusho) is tracking a series of identical murders, committed under the same bizarre circumstances. Nothing seems to connect the murders and Takabe becomes increasingly frustrated...",
                                 "https://m.media-amazon.com/images/M/MV5BY2IzODExNDgtMzViNC00ZDk5LWJlOGYtM2VjZjQ4MzllN2RiXkEyXkFqcGdeQXVyNTY4ODAxODI@._V1_.jpg",
                                 director5);

@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class Collection {
     private String collectionImage;
 
     @ManyToMany
+    @JoinColumn
     private List<Movie> movies;
 
     public Collection(String collectionName, String sanitizeCollectionName, String collectionDescription,
@@ -44,7 +46,5 @@ public class Collection {
         this.collectionImage = collectionImage;
         this.movies = movies;
     }
-
-    
 
 }
