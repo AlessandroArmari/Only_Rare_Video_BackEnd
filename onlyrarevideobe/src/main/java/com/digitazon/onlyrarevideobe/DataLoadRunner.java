@@ -34,12 +34,14 @@ public class DataLoadRunner implements CommandLineRunner {
                 Director director3 = new Director("Nanni Moretti", "nannimoretti", "1953", "Italian", null);
                 Director director4 = new Director("Zhang Yimou", "zhangyimou", "1950", "Chinese", null);
                 Director director5 = new Director("Kiyoshi Kurosawa", "kiyoshikurosawa", "1955", "Japan", null);
+                Director director6 = new Director("Fernando Di Leo", "fernandodileo", "1932", "italy", null);
 
                 directorService.createDirector(director1);
                 directorService.createDirector(director2);
                 directorService.createDirector(director3);
                 directorService.createDirector(director4);
                 directorService.createDirector(director5);
+                directorService.createDirector(director6);
 
                 // M. Night Movies
                 Movie movie1 = new Movie("The Village", "thevillage", "2004", "Horror", "108",
@@ -136,6 +138,47 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "https://m.media-amazon.com/images/M/MV5BY2IzODExNDgtMzViNC00ZDk5LWJlOGYtM2VjZjQ4MzllN2RiXkEyXkFqcGdeQXVyNTY4ODAxODI@._V1_.jpg",
                                 director5);
 
+                // Fernando di Leo movies
+
+                Movie movie18 = new Movie("Caliber 9", "milanocalibro9", "1972", "Noir", "88",
+                                "Police and the mob hunt for a just-released prisoner.",
+                                "https://m.media-amazon.com/images/M/MV5BNWQzYmJjNWItOTY3NS00Yzc4LTkzYWItNDYzZWI5ZmJiYjYwXkEyXkFqcGdeQXVyNzgzODI1OTE@._V1_.jpg",
+                                director6);
+
+                Movie movie19 = new Movie("The Italian Connection", "theitalianconnection", "1972", "Noir", "97",
+                                "A Milanese pimp (Henry Silva) kills hit men (Mario Adorf, Woody Strode) on his trail after a crime boss frames him for stealing heroin.",
+                                "https://m.media-amazon.com/images/M/MV5BZWZhMDA1NzgtMmMxOC00ZmNlLWJjMGQtM2YxN2U4NDM1NGNkXkEyXkFqcGdeQXVyNzgzODI1OTE@._V1_.jpg",
+                                director6);
+
+                Movie movie20 = new Movie("Slaughter Hotel", "slaughterhotel", "1971", "Horror", "97",
+                                "A masked killer uses medieval weaponry to kill women in an asylum for suicidal and disturbed women.",
+                                "https://m.media-amazon.com/images/M/MV5BYThkOGRhNDAtMDYzMC00YmNkLThjYjYtZjY1YTQxOWI1ZTIwXkEyXkFqcGdeQXVyMjA0MzYwMDY@._V1_.jpg",
+                                director6);
+
+                // Out Soon Movies
+
+                Movie CSmovie1 = new Movie("Pink Flamingos", "pinkflamingos", "1972 ", "Black Comedy", "107",
+                                "15th March 2023",
+                                "https://m.media-amazon.com/images/M/MV5BYjc2NTM3ZTEtYzc0ZC00NjQ4LTk3MzktN2I4OWE1NTU3ZDFmXkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_.jpg",
+                                null);
+
+                Movie CSmovie2 = new Movie("The Basilisks", "ibasilischi", "1963 ", "Drama", "84",
+                                "25th March 2023",
+                                "https://m.media-amazon.com/images/M/MV5BZmJkOGY0YzUtOTkwNC00ZWNiLTg2YzktNjdmZmVkYzBhMzk5XkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_.jpg",
+                                null);
+
+                Movie CSmovie3 = new Movie("In the mood for love", "inthemoodforlove", "2000", "Drama",
+                                "98",
+                                "10th April 2023",
+                                "https://m.media-amazon.com/images/M/MV5BYWVjNjMwZTgtMGYyYy00NmVhLWE1NDItMzFhMmJkYTNjYWIwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                                null);
+
+                Movie CSmovie4 = new Movie("Assault on Precinct 13", "assaultonprecient13", "1976", "Thriller",
+                                "91",
+                                "10th April 2023",
+                                "https://m.media-amazon.com/images/M/MV5BYzdkYjZiYjEtN2UwZS00NGQyLTg2Y2MtZWYyMTAxMGEwZjBkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+                                null);
+
                 movieService.createMovie(movie1);
                 movieService.createMovie(movie2);
                 movieService.createMovie(movie3);
@@ -153,6 +196,16 @@ public class DataLoadRunner implements CommandLineRunner {
                 movieService.createMovie(movie15);
                 movieService.createMovie(movie16);
                 movieService.createMovie(movie17);
+                movieService.createMovie(movie18);
+                movieService.createMovie(movie19);
+                movieService.createMovie(movie20);
+
+                // ++++++++++++++++++++++++++++++++
+
+                movieService.createMovie(CSmovie1);
+                movieService.createMovie(CSmovie2);
+                movieService.createMovie(CSmovie3);
+                movieService.createMovie(CSmovie4);
 
                 // +++MANAGIN TABLE COLLECTION+++
                 // CREATING moviesHalloween (ArrayList) TO BE PUT IN A halloweenCollection
@@ -168,9 +221,11 @@ public class DataLoadRunner implements CommandLineRunner {
                 moviesHalloween.add(movie1);
                 moviesHalloween.add(movie16);
                 moviesHalloween.add(movie17);
+                moviesHalloween.add(movie20);
 
                 Collection halloweenCollection = new Collection("Halloween Collection", "halloweencollection",
-                                "Have your Halloween deal. Get 3 movies, pay 2 of them. Valid until 1st November!",
+                                "Have your Halloween deal. Wait 'till Some crazy-head comes to chop yours!",
+                                "What's Your Favorite Scary Movie? Don't you know? Buy 3 movies within this fine, delicous collection and have the third for free. Have a nice Halloween, fellas. Valid until 1st November. ",
                                 "https://m.media-amazon.com/images/M/MV5BOTRkMTA3OGUtZDJjNy00MzhjLTkyZDEtY2I4M2ZiZTk0MDJmXkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_.jpg",
                                 moviesHalloween);
 
@@ -186,7 +241,8 @@ public class DataLoadRunner implements CommandLineRunner {
                 moviesRisingSun.add(movie17);
 
                 Collection risingSunCollection = new Collection("Rising Sun Collection", "risingsuncollection",
-                                "33% off all of the oriental movies. The sun shines bright!",
+                                "The best of the best of the asian production, 33% off!",
+                                "Where the sun rises, movies shine! Discover the genuine-oriental taste for blood and gore. You'll never come back as you were! (or maybe alive...)",
                                 "https://m.media-amazon.com/images/M/MV5BYzE4Yjc1ZmQtZDhlYi00YzZhLWFlZGYtOWI5MmZlNjU3ZDA2XkEyXkFqcGdeQXVyMTI3MDk3MzQ@._V1_.jpg",
                                 moviesRisingSun);
 
@@ -198,13 +254,34 @@ public class DataLoadRunner implements CommandLineRunner {
 
                 moviesItalianDeal.add(movie13);
                 moviesItalianDeal.add(movie12);
+                moviesItalianDeal.add(movie18);
+                moviesItalianDeal.add(movie19);
+                moviesItalianDeal.add(movie20);
 
                 Collection italianDeal = new Collection("Italian Deal", "italiandeal",
-                                "Eat, shoot and cry. Choose among our collection of discounted italian delicatessen!",
+                                "Up to 66% off on the italian catalogue",
+                                "Mamma mia! Che bello film! Who said only americans do good action movies? Choose among our collection of discounted italian delicatessen!",
                                 "https://m.media-amazon.com/images/M/MV5BMTc3ZWI4YWYtNzM5ZC00ZGI0LWJlYmItYTRjZTBhNzI1ZTc1XkEyXkFqcGdeQXVyMDQ4Mzg5Mw@@._V1_.jpg",
                                 moviesItalianDeal);
 
                 collectionService.createCollection(italianDeal);
+
+                /* 4 Coming Soon */
+
+                List<Movie> comingSoon = new ArrayList<>();
+
+                comingSoon.add(CSmovie1);
+                comingSoon.add(CSmovie2);
+                comingSoon.add(CSmovie3);
+                comingSoon.add(CSmovie4);
+
+                Collection comingSoonCollection = new Collection("Coming Soon", "comingsoon",
+                                "Fresh Meat available soon...",
+                                "Fresh Meat available soon...",
+                                "",
+                                comingSoon);
+
+                collectionService.createCollection(comingSoonCollection);
 
         };
 

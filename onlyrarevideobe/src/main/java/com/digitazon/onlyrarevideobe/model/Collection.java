@@ -28,8 +28,11 @@ public class Collection {
     @Column
     private String sanitizeCollectionName;
 
-    @Column
+    @Column(length = 20000)
     private String collectionDescription;
+
+    @Column(length = 20000)
+    private String longCollectionDescription;
 
     @Column(length = 20000)
     private String collectionImage;
@@ -39,12 +42,15 @@ public class Collection {
     private List<Movie> movies;
 
     public Collection(String collectionName, String sanitizeCollectionName, String collectionDescription,
-            String collectionImage, List<Movie> movies) {
+            String longCollectionDescription, String collectionImage, List<Movie> movies) {
         this.collectionName = collectionName;
         this.sanitizeCollectionName = sanitizeCollectionName;
         this.collectionDescription = collectionDescription;
+        this.longCollectionDescription = longCollectionDescription;
         this.collectionImage = collectionImage;
         this.movies = movies;
     }
+
+    
 
 }
