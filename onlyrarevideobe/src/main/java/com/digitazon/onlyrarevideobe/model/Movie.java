@@ -46,6 +46,8 @@ public class Movie {
     // Spring will create a column "image" type--->TEXT, not VARCHAR
     private String image;
 
+ 
+
     // Foreign Key
     @ManyToOne
     @JoinColumn(name = "director_id")
@@ -55,8 +57,11 @@ public class Movie {
     @ManyToMany
     private List<Collection> collections;
 
+    @Column
+    private boolean isComingSoon;
+
     public Movie(String title, String sanitizeTitle, String year, String genre, String running_time, String plot,
-            String image, Director director) {
+            String image, Director director, List<Collection> collections, boolean isComingSoon) {
         this.title = title;
         this.sanitizeTitle = sanitizeTitle;
         this.year = year;
@@ -65,6 +70,12 @@ public class Movie {
         this.plot = plot;
         this.image = image;
         this.director = director;
+        this.collections = collections;
+        this.isComingSoon = isComingSoon;
     }
+
+    
+
+    
 
 }
