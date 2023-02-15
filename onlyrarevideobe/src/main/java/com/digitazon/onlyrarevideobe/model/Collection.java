@@ -41,16 +41,18 @@ public class Collection {
     @JoinColumn
     private List<Movie> movies;
 
+    @Column
+    private boolean isComingSoon;
+
     public Collection(String collectionName, String sanitizeCollectionName, String collectionDescription,
-            String longCollectionDescription, String collectionImage, List<Movie> movies) {
+            String longCollectionDescription, String collectionImage, List<Movie> movies, boolean isComingSoon) {
         this.collectionName = collectionName;
         this.sanitizeCollectionName = sanitizeCollectionName;
         this.collectionDescription = collectionDescription;
         this.longCollectionDescription = longCollectionDescription;
         this.collectionImage = collectionImage;
         this.movies = movies;
+        this.isComingSoon = isComingSoon;
     }
-
-    
 
 }

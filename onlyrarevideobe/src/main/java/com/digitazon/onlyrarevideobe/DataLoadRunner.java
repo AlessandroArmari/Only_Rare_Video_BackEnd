@@ -179,7 +179,6 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "https://m.media-amazon.com/images/M/MV5BYzdkYjZiYjEtN2UwZS00NGQyLTg2Y2MtZWYyMTAxMGEwZjBkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
                                 null, null, true);
 
-
                 movieService.createMovie(movie1);
                 movieService.createMovie(movie2);
                 movieService.createMovie(movie3);
@@ -225,10 +224,10 @@ public class DataLoadRunner implements CommandLineRunner {
                 moviesHalloween.add(movie20);
 
                 Collection halloweenCollection = new Collection("Halloween Collection", "halloweencollection",
-                                "Have your Halloween deal. Wait 'till Some crazy-head comes to chop yours!",
+                                "You really goes out on Halloween night? Movies are better!",
                                 "What's Your Favorite Scary Movie? Don't you know? Buy 3 movies within this fine, delicous collection and have the third for free. Have a nice Halloween, fellas. Valid until 1st November. ",
                                 "https://m.media-amazon.com/images/M/MV5BNDQ2YzA1YjMtOWEwYS00YmFjLWJjNDktMmQ5ZWZjZTU3YjY4XkEyXkFqcGdeQXVyODQxOTM0ODI@._V1_.jpg",
-                                moviesHalloween);
+                                moviesHalloween, false);
 
                 collectionService.createCollection(halloweenCollection);
 
@@ -245,7 +244,7 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "The best of the best of the asian production, 33% off!",
                                 "Where the sun rises, movies shine! Discover the genuine-oriental taste for blood and gore. You'll never come back as you were! (or maybe alive...)",
                                 "https://m.media-amazon.com/images/M/MV5BODZhZWUwOWEtMTExOS00OTM4LWEyZjctZDNmYzE3MGRmM2ZkXkEyXkFqcGdeQXVyOTc5MDI5NjE@._V1_.jpg",
-                                moviesRisingSun);
+                                moviesRisingSun, false);
 
                 collectionService.createCollection(risingSunCollection);
 
@@ -263,7 +262,7 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "Up to 66% off on the italian catalogue",
                                 "Mamma mia! Che bello film! Who said only americans do good action movies? Choose among our collection of discounted italian delicatessen!",
                                 "https://m.media-amazon.com/images/M/MV5BYWU5ZDA4MzctMWFhOS00MDQ0LWJjNDUtYTE3NDEzOGIwYjMxXkEyXkFqcGdeQXVyMTE4MDg3NTIz._V1_.jpg",
-                                moviesItalianDeal);
+                                moviesItalianDeal, false);
 
                 collectionService.createCollection(italianDeal);
 
@@ -280,7 +279,7 @@ public class DataLoadRunner implements CommandLineRunner {
                                 "Fresh Meat available soon...",
                                 "Fresh Meat available soon...",
                                 "",
-                                comingSoon);
+                                comingSoon, true);
 
                 collectionService.createCollection(comingSoonCollection);
 
