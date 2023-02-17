@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 
 import com.digitazon.onlyrarevideobe.model.Collection;
 import com.digitazon.onlyrarevideobe.model.Director;
+import com.digitazon.onlyrarevideobe.model.Email;
 import com.digitazon.onlyrarevideobe.model.Movie;
 import com.digitazon.onlyrarevideobe.service.DirectorService;
+import com.digitazon.onlyrarevideobe.service.EmailService;
 import com.digitazon.onlyrarevideobe.service.MovieService;
 import com.digitazon.onlyrarevideobe.service.CollectionService;
 
@@ -25,6 +27,9 @@ public class DataLoadRunner implements CommandLineRunner {
 
         @Autowired
         CollectionService collectionService;
+
+        @Autowired
+        EmailService emailService;
 
         @Override
         public void run(String... args) throws Exception {
@@ -282,6 +287,13 @@ public class DataLoadRunner implements CommandLineRunner {
                                 comingSoon, true);
 
                 collectionService.createCollection(comingSoonCollection);
+
+                // Email newsletter
+
+                Email email1 = new Email("alessandroarmari22@gmail.com");
+                Email email2 = new Email("ciao@libero.it");
+                emailService.createEmail(email1);
+                emailService.createEmail(email2);
 
         };
 
