@@ -33,7 +33,7 @@ public class EmailController {
 
         if (emailService.createEmail(email) == null) {
 
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.CONFLICT);
 
         }
 
